@@ -10,6 +10,7 @@
   
   <link rel="stylesheet" href="style.css">
   <script src="index.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
 
 </head>
 
@@ -18,7 +19,10 @@
         <h3>My Identicon Generator</h3>
         <div>
             Input:
-            <input />
+            <input v-on:input="onInput"/>   
+            <!-- this is a directive: piece of template syntax inside of Vue that enhances the behavior of html code. 
+                v-on specifies an event handler; after the colon we put the name of the event we want to listen to. 
+                Every time the input event is listened, we call the method in double quotes: the onInput method --> 
         </div>
         <div>
             Output:
