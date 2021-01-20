@@ -10,7 +10,7 @@ new Vue({
     },
     computed: { //contains functions that turn data into viewable values
         identicon: function(){
-           return jdenticon.toSvg(this.textInput, 200)
+           return jdenticon.toSvg(this.textInput, 200)  //200 is the px height and width
         },
     },
     methods: {
@@ -19,4 +19,16 @@ new Vue({
             
         }
     },
+    template: `
+    <div>
+        <div>
+            Input:
+            <input v-on:input="onInput"/> 
+        </div>
+        <div>
+            Output:
+            <div v-html="identicon" ></div>
+        </div>
+    </div>
+    `
 })
