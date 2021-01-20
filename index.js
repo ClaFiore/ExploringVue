@@ -9,11 +9,13 @@ new Vue({
         textInput: ''
     },
     computed: { //contains functions that turn data into viewable values
-
+        identicon: function(){
+           return jdenticon.toSvg(this.textInput, 200)
+        },
     },
     methods: {
         onInput: function(event){    //onInput is a made up name, you can call this method whatever you want
-            console.log(event.target.value)
+            this.textInput = event.target.value     //updates data with key of 'textInput'
             
         }
     },

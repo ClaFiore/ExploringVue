@@ -11,7 +11,10 @@
   <link rel="stylesheet" href="style.css">
   <script src="index.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
-
+  <script src="https://cdn.jsdelivr.net/npm/jdenticon@3.1.0/dist/jdenticon.min.js"
+  integrity="sha384-VngWWnG9GS4jDgsGEUNaoRQtfBGiIKZTiXwm9KpgAeaRn6Y/1tAFiyXqSzqC8Ga/"
+  crossorigin="anonymous">
+</script>
 </head>
 
 <body>
@@ -26,6 +29,7 @@
         </div>
         <div>
             Output:
+            <div v-html="identicon" />
         </div>
 
     </div>
