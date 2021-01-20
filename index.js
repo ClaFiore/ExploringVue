@@ -19,16 +19,17 @@ new Vue({
             
         }
     },
-    template: `
+    template: `     
     <div>
         <div>
             Input:
             <input v-on:input="onInput"/> 
         </div>
         <div>
-            Output:
+            Output: {{textInput}}
             <div v-html="identicon" ></div>
         </div>
     </div>
     `
+    //inside the template you can refer to a data/computed or method property simply by typing its name in {{ }} 
 })
