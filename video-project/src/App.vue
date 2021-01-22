@@ -4,6 +4,7 @@
 <!-- only one div, which can contain other elements -->
   <div id="app">
     <SearchBar @termChange="onTermChange"></SearchBar>
+    <VideoList/>
   </div>
 </template>
 
@@ -22,13 +23,18 @@
 //import components inside <script> tag
 
 import SearchBar from './components/SearchBar'   
+import VideoList from './components/VideoList'
 import axios from 'axios'
-const API_KEY = process.env.API_KEY
+
+// const API_KEY = process.env.API_KEY
+
 
 export default {
   name: 'App',
   components: {
-    SearchBar
+    SearchBar,
+    VideoList
+
   },
   methods:{
     onTermChange(searchTerm) {
