@@ -9,11 +9,13 @@
 <script>
     export default {
         name: "SearchBar",
+
+        //methods give the ability to change 'data'
         methods: {
-            //methods give the ability to change 'data'
+            //listen for the user to type in the input, and then use the value inputted to trigger an event that tells the parent component to do smtg with it 
             onInput: function(event){
-                console.log(event.target.value)
-            } ,
+                this.$emit('termChange', event.target.value) //first argument is called whatever we want
+            }
         }
     }
 </script>
