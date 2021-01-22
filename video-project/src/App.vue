@@ -3,7 +3,7 @@
 <template>
 <!-- only one div, which can contain other elements -->
   <div id="app">
-    Hi There!
+    <SearchBar></SearchBar>
   </div>
 </template>
 
@@ -19,9 +19,16 @@
 //  computed: {},
 //  methods:{},
 
+
+//import components inside <script> tag
+
+
+import SearchBar from './components/SearchBar'        
 export default {
   name: 'App',
-
+  components: {
+    SearchBar
+  }
   
 }
 </script>
