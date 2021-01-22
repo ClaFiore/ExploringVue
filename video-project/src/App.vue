@@ -5,6 +5,7 @@
   <div id="app">
     <SearchBar @termChange="onTermChange"></SearchBar>
     <VideoList/>
+    {{videos.length}}
   </div>
 </template>
 
@@ -34,7 +35,9 @@ export default {
   components: {
     SearchBar,
     VideoList
-
+  },
+  data(){
+    return { videos: []}
   },
   methods:{
     onTermChange(searchTerm) {
@@ -42,11 +45,13 @@ export default {
           params:{
             key: API_KEY ,
             type: 'video',
-            part: 'snippet', //what type of information we want to get back
+            part: 'snippet', //what type of information we want to get back from the youtube api
             q: searchTerm
           }
         })
-        .then(res => console.log(res))
+        .then(res => {
+          this.videos = res.data.items
+        })
     }
   }
   
