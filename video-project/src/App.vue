@@ -1,24 +1,33 @@
 <!-- html of this component inside <template> tag -->
 
 <template>
+<!-- only one div, which can contain other elements -->
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    Hi There!
   </div>
 </template>
 
 
+
+
 <!-- javascript of this component inside <script> tag -->
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+// export default contains vue properties that customize this Vue component and how it behaves 
+// the below properties can be added to the components, if needed, but "name" is always needed, also for debugging purposes 
+//  data: {},
+//  computed: {},
+//  methods:{},
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
+
+  
 }
 </script>
+
+
+
 
 
 <!-- css of this component inside <style> tag -->
