@@ -19,11 +19,12 @@
 //  computed: {},
 //  methods:{},
 
-
 //import components inside <script> tag
 
+import SearchBar from './components/SearchBar'   
+import axios from 'axios'
+const API_KEY = process.env.API_KEY
 
-import SearchBar from './components/SearchBar'        
 export default {
   name: 'App',
   components: {
@@ -31,7 +32,15 @@ export default {
   },
   methods:{
     onTermChange(searchTerm) {
-        console.log(searchTerm)
+        axios.get('https://www.googleapis.com/youtube/v3/search', {
+          params:{
+            key: API_KEY ,
+            type: 'video',
+            part: 'snippet', //what type of information we want to get back
+            q: searchTerm
+          }
+        })
+        .then(res => console.log(res))
     }
   }
   
