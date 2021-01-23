@@ -4,8 +4,10 @@
 <!-- only one div, which can contain other elements -->
   <div id="app">
     <SearchBar @termChange="onTermChange"></SearchBar>
-    <VideoList/>
-    {{videos.length}}
+    <VideoList v-bind:videos="videos" />
+    <!-- <VideoList :videos="videos"> </VideoList> same thing as the above -->
+          <!-- v-bind:props name as available in child component = "name of state to pass down" -->
+    <!-- every time state of videos is updated, v-bind rerenders the VideoList component sending down the updated props  -->
   </div>
 </template>
 
