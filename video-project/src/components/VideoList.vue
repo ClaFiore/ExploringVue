@@ -1,10 +1,17 @@
 <template>
     <div>
         <ul>
-            <VideoListItem />
+            <VideoListItem 
+                v-for="video in videos" 
+                v-bind:video="video"
+                v-bind:key="video.etag" 
+            />
         </ul>
     </div>
 </template>
+
+// :key="video.id" and v-bind:key="video.id" are the same
+
 
 
 <script>
