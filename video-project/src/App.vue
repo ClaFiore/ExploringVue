@@ -2,7 +2,7 @@
 
 <template>
 <!-- only one div, which can contain other elements -->
-  <div id="app">
+  <div id="app" class="container">
     <SearchBar @termChange="onTermChange"></SearchBar>
     <VideoList v-bind:videos="videos" />
     <!-- <VideoList :videos="videos"> </VideoList> same thing as the above -->
@@ -30,7 +30,7 @@ import VideoList from './components/VideoList'
 import axios from 'axios'
 
 // const API_KEY = process.env.API_KEY
-
+ 
 
 export default {
   name: 'App',
@@ -53,7 +53,7 @@ export default {
         })
         .then(res => {
           this.videos = res.data.items
-        })
+        }).catch(error => console.log(error))
     }
   }
   
@@ -66,12 +66,5 @@ export default {
 
 <!-- css of this component inside <style> tag -->
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
