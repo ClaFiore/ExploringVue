@@ -30,7 +30,7 @@ import VideoList from './components/VideoList'
 import axios from 'axios'
 
 // const API_KEY = process.env.API_KEY
-
+const API_KEY = 
 
 export default {
   name: 'App',
@@ -52,7 +52,7 @@ export default {
           }
         })
         .then(res => {
-          this.videos = res.data.items
+          this.videos = res.data.items  //no need to specify this.data.videos, vue knows to look at 'videos' property without the need to tell it to look into data
         }).catch(error => console.log(error))
     }
   }
